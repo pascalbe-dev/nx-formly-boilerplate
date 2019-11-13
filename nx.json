@@ -22,6 +22,9 @@
     },
     "ui-interfaces": {
       "tags": []
+    },
+    "util-formly": {
+      "tags": []
     }
   }
 }

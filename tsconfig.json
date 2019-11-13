@@ -18,7 +18,8 @@
     "paths": {
       "@nx-formly-boilerplate/ui-interfaces": [
         "libs/ui-interfaces/src/index.ts"
-      ]
+      ],
+      "@nx-formly-boilerplate/util-formly": ["libs/util-formly/src/index.ts"]
     }
   },
   "exclude": ["node_modules", "tmp"]

@@ -87,10 +87,7 @@
               "apps/claim-report/tsconfig.app.json",
               "apps/claim-report/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/claim-report/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/claim-report/**"]
           }
         },
         "test": {
@@ -124,13 +121,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/claim-report-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/claim-report-e2e/**"
-            ]
+            "tsConfig": ["apps/claim-report-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/claim-report-e2e/**"]
           }
         }
       }
@@ -159,9 +151,7 @@
               "apps/claim-portal/src/favicon.ico",
               "apps/claim-portal/src/assets"
             ],
-            "styles": [
-              "apps/claim-portal/src/styles.scss"
-            ],
+            "styles": ["apps/claim-portal/src/styles.scss"],
             "scripts": []
           },
           "configurations": {
@@ -220,10 +210,7 @@
               "apps/claim-portal/tsconfig.app.json",
               "apps/claim-portal/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/claim-portal/**"
-            ]
+            "exclude": ["**/node_modules/**", "!apps/claim-portal/**"]
           }
         },
         "test": {
@@ -257,13 +244,8 @@
         "lint": {
           "builder": "@angular-devkit/build-angular:tslint",
           "options": {
-            "tsConfig": [
-              "apps/claim-portal-e2e/tsconfig.e2e.json"
-            ],
-            "exclude": [
-              "**/node_modules/**",
-              "!apps/claim-portal-e2e/**"
-            ]
+            "tsConfig": ["apps/claim-portal-e2e/tsconfig.e2e.json"],
+            "exclude": ["**/node_modules/**", "!apps/claim-portal-e2e/**"]
           }
         }
       }
@@ -281,10 +263,7 @@
               "libs/ui-interfaces/tsconfig.lib.json",
               "libs/ui-interfaces/tsconfig.spec.json"
             ],
-            "exclude": [
-              "**/node_modules/**",
-              "!libs/ui-interfaces/**"
-            ]
+            "exclude": ["**/node_modules/**", "!libs/ui-interfaces/**"]
           }
         },
         "test": {
@@ -292,6 +271,31 @@
           "options": {
             "jestConfig": "libs/ui-interfaces/jest.config.js",
             "tsConfig": "libs/ui-interfaces/tsconfig.spec.json"
+          }
+        }
+      }
+    },
+    "util-formly": {
+      "root": "libs/util-formly",
+      "sourceRoot": "libs/util-formly/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/util-formly/tsconfig.lib.json",
+              "libs/util-formly/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/util-formly/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/util-formly/jest.config.js",
+            "tsConfig": "libs/util-formly/tsconfig.spec.json"
           }
         }
       }
