@@ -25,6 +25,9 @@
     },
     "util-formly": {
       "tags": []
+    },
+    "ui-forms": {
+      "tags": []
     }
   }
 }

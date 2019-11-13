@@ -299,6 +299,31 @@
           }
         }
       }
+    },
+    "ui-forms": {
+      "root": "libs/ui-forms",
+      "sourceRoot": "libs/ui-forms/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-forms/tsconfig.lib.json",
+              "libs/ui-forms/tsconfig.spec.json"
+            ],
+            "exclude": ["**/node_modules/**", "!libs/ui-forms/**"]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-forms/jest.config.js",
+            "tsConfig": "libs/ui-forms/tsconfig.spec.json"
+          }
+        }
+      }
     }
   },
   "cli": {

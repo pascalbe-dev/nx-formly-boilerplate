@@ -3,3 +3,5 @@ export interface ReportPerson {
   email: string;
   phone?: string;
 }
+
+export type ReportPersonTestIdType = 'Name' | 'Email Address' | 'Phone Number';
