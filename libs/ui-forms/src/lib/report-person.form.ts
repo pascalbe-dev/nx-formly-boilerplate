@@ -12,6 +12,8 @@ export const getReportPersonForm = (): TypedFieldConfigModel<
     key: 'name',
     type: 'input',
     templateOptions: {
+      label: 'Name of the reporting person',
+      required: true,
       attributes: {
         'data-cy': 'Name'
       }
@@ -21,6 +23,8 @@ export const getReportPersonForm = (): TypedFieldConfigModel<
     key: 'email',
     type: 'input',
     templateOptions: {
+      label: 'Email address of the reporting person',
+      required: true,
       attributes: {
         'data-cy': 'Email Address'
       }
@@ -30,6 +34,8 @@ export const getReportPersonForm = (): TypedFieldConfigModel<
     key: 'phone',
     type: 'input',
     templateOptions: {
+      label: 'Phone number of the reporting person',
+      description: 'Only mobile phone number expected',
       attributes: {
         'data-cy': 'Phone Number'
       }
