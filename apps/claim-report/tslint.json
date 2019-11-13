@@ -1,0 +1,17 @@
+{
+  "extends": "../../tslint.json",
+  "rules": {
+    "directive-selector": [
+      true,
+      "attribute",
+      "nxFormlyBoilerplate",
+      "camelCase"
+    ],
+    "component-selector": [
+      true,
+      "element",
+      "nx-formly-boilerplate",
+      "kebab-case"
+    ]
+  }
+}

@@ -7,5 +7,21 @@
     "tslint.json": "*",
     "nx.json": "*"
   },
-  "projects": {}
+  "projects": {
+    "claim-report-e2e": {
+      "tags": []
+    },
+    "claim-report": {
+      "tags": []
+    },
+    "claim-portal-e2e": {
+      "tags": []
+    },
+    "claim-portal": {
+      "tags": []
+    },
+    "ui-interfaces": {
+      "tags": []
+    }
+  }
 }

@@ -1,7 +1,313 @@
 {
   "version": 1,
-  "projects": {},
+  "projects": {
+    "claim-report": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/claim-report",
+      "sourceRoot": "apps/claim-report/src",
+      "prefix": "nx-formly-boilerplate",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/claim-report",
+            "index": "apps/claim-report/src/index.html",
+            "main": "apps/claim-report/src/main.ts",
+            "polyfills": "apps/claim-report/src/polyfills.ts",
+            "tsConfig": "apps/claim-report/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/claim-report/src/favicon.ico",
+              "apps/claim-report/src/assets"
+            ],
+            "styles": [
+              "./node_modules/@angular/material/prebuilt-themes/indigo-pink.css",
+              "apps/claim-report/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/claim-report/src/environments/environment.ts",
+                  "with": "apps/claim-report/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "claim-report:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "claim-report:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "claim-report:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/claim-report/tsconfig.app.json",
+              "apps/claim-report/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/claim-report/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/claim-report/jest.config.js",
+            "tsConfig": "apps/claim-report/tsconfig.spec.json",
+            "setupFile": "apps/claim-report/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "claim-report-e2e": {
+      "root": "apps/claim-report-e2e",
+      "sourceRoot": "apps/claim-report-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/claim-report-e2e/cypress.json",
+            "tsConfig": "apps/claim-report-e2e/tsconfig.e2e.json",
+            "devServerTarget": "claim-report:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "claim-report:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/claim-report-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/claim-report-e2e/**"
+            ]
+          }
+        }
+      }
+    },
+    "claim-portal": {
+      "projectType": "application",
+      "schematics": {
+        "@nrwl/angular:component": {
+          "style": "scss"
+        }
+      },
+      "root": "apps/claim-portal",
+      "sourceRoot": "apps/claim-portal/src",
+      "prefix": "nx-formly-boilerplate",
+      "architect": {
+        "build": {
+          "builder": "@angular-devkit/build-angular:browser",
+          "options": {
+            "outputPath": "dist/apps/claim-portal",
+            "index": "apps/claim-portal/src/index.html",
+            "main": "apps/claim-portal/src/main.ts",
+            "polyfills": "apps/claim-portal/src/polyfills.ts",
+            "tsConfig": "apps/claim-portal/tsconfig.app.json",
+            "aot": true,
+            "assets": [
+              "apps/claim-portal/src/favicon.ico",
+              "apps/claim-portal/src/assets"
+            ],
+            "styles": [
+              "apps/claim-portal/src/styles.scss"
+            ],
+            "scripts": []
+          },
+          "configurations": {
+            "production": {
+              "fileReplacements": [
+                {
+                  "replace": "apps/claim-portal/src/environments/environment.ts",
+                  "with": "apps/claim-portal/src/environments/environment.prod.ts"
+                }
+              ],
+              "optimization": true,
+              "outputHashing": "all",
+              "sourceMap": false,
+              "extractCss": true,
+              "namedChunks": false,
+              "aot": true,
+              "extractLicenses": true,
+              "vendorChunk": false,
+              "buildOptimizer": true,
+              "budgets": [
+                {
+                  "type": "initial",
+                  "maximumWarning": "2mb",
+                  "maximumError": "5mb"
+                },
+                {
+                  "type": "anyComponentStyle",
+                  "maximumWarning": "6kb",
+                  "maximumError": "10kb"
+                }
+              ]
+            }
+          }
+        },
+        "serve": {
+          "builder": "@angular-devkit/build-angular:dev-server",
+          "options": {
+            "browserTarget": "claim-portal:build"
+          },
+          "configurations": {
+            "production": {
+              "browserTarget": "claim-portal:build:production"
+            }
+          }
+        },
+        "extract-i18n": {
+          "builder": "@angular-devkit/build-angular:extract-i18n",
+          "options": {
+            "browserTarget": "claim-portal:build"
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/claim-portal/tsconfig.app.json",
+              "apps/claim-portal/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/claim-portal/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "apps/claim-portal/jest.config.js",
+            "tsConfig": "apps/claim-portal/tsconfig.spec.json",
+            "setupFile": "apps/claim-portal/src/test-setup.ts"
+          }
+        }
+      }
+    },
+    "claim-portal-e2e": {
+      "root": "apps/claim-portal-e2e",
+      "sourceRoot": "apps/claim-portal-e2e/src",
+      "projectType": "application",
+      "architect": {
+        "e2e": {
+          "builder": "@nrwl/cypress:cypress",
+          "options": {
+            "cypressConfig": "apps/claim-portal-e2e/cypress.json",
+            "tsConfig": "apps/claim-portal-e2e/tsconfig.e2e.json",
+            "devServerTarget": "claim-portal:serve"
+          },
+          "configurations": {
+            "production": {
+              "devServerTarget": "claim-portal:serve:production"
+            }
+          }
+        },
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "apps/claim-portal-e2e/tsconfig.e2e.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!apps/claim-portal-e2e/**"
+            ]
+          }
+        }
+      }
+    },
+    "ui-interfaces": {
+      "root": "libs/ui-interfaces",
+      "sourceRoot": "libs/ui-interfaces/src",
+      "projectType": "library",
+      "schematics": {},
+      "architect": {
+        "lint": {
+          "builder": "@angular-devkit/build-angular:tslint",
+          "options": {
+            "tsConfig": [
+              "libs/ui-interfaces/tsconfig.lib.json",
+              "libs/ui-interfaces/tsconfig.spec.json"
+            ],
+            "exclude": [
+              "**/node_modules/**",
+              "!libs/ui-interfaces/**"
+            ]
+          }
+        },
+        "test": {
+          "builder": "@nrwl/jest:jest",
+          "options": {
+            "jestConfig": "libs/ui-interfaces/jest.config.js",
+            "tsConfig": "libs/ui-interfaces/tsconfig.spec.json"
+          }
+        }
+      }
+    }
+  },
   "cli": {
-    "defaultCollection": "@nrwl/workspace"
-  }
+    "defaultCollection": "@nrwl/angular"
+  },
+  "schematics": {
+    "@nrwl/angular:application": {
+      "unitTestRunner": "jest",
+      "e2eTestRunner": "cypress"
+    },
+    "@nrwl/angular:library": {
+      "unitTestRunner": "jest"
+    }
+  },
+  "defaultProject": "claim-report"
 }
